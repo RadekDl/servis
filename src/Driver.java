@@ -4,6 +4,17 @@ public class Driver {
     private String telefonNumber2;
 
 
+    public Driver(String name, String jobTelefonNumber, String telefonNumber2) {
+        this.name = name;
+        this.jobTelefonNumber = jobTelefonNumber;
+        this.telefonNumber2 = telefonNumber2;
+    }
+
+    public Driver(String name, String jobTelefonNumber){
+        this(name, jobTelefonNumber, null);
+
+    }
+
     public String getName() {
         return name;
     }
