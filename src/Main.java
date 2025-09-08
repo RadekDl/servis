@@ -4,9 +4,6 @@ import java.util.List;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
-
-
-
     public static void main(String[] args) {
 
 
@@ -20,6 +17,11 @@ public class Main {
 
         System.out.println(manager.getAllDrivers().get(0).getName()+ " " + manager.getAllDrivers().get(0).getId());
         System.out.println(manager.getAllDrivers().get(1).getName()+ " " + manager.getAllDrivers().get(1).getId());
+
+        // automaticky zavolá d.toString()
+        for (Driver d : manager.getAllDrivers()) {
+            System.out.println(d);
+        }
 
 // Smažeme prvního Jana Nováka podle jeho ID
         boolean removed = manager.removeDriverById(d1.getId());
