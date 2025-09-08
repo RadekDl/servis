@@ -1,10 +1,14 @@
+import java.util.UUID;
+
 public class Driver {
+    private final String id;
     private String name;
     private String jobTelefonNumber;
     private String telefonNumber2;
 
 
     public Driver(String name, String jobTelefonNumber, String telefonNumber2) {
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.jobTelefonNumber = jobTelefonNumber;
         this.telefonNumber2 = telefonNumber2;
@@ -13,6 +17,10 @@ public class Driver {
     public Driver(String name, String jobTelefonNumber){
         this(name, jobTelefonNumber, null);
 
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getName() {
@@ -42,5 +50,15 @@ public class Driver {
 
     public void setTelefonNumber2(String telefonNumber2) {
         this.telefonNumber2 = telefonNumber2;
+    }
+
+    @Override
+    public String toString() {
+        return "Řidič {" +
+                "id ='" + id + '\'' +
+                ", jméno ='" + name + '\'' +
+                ", pracovní telefon='" + jobTelefonNumber + '\'' +
+                ", další telefon ='" + telefonNumber2 + '\'' +
+                '}';
     }
 }
