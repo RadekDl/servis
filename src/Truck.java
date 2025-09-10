@@ -5,10 +5,27 @@ public class Truck {
     private String typ;
     private Driver driver;
     private LocalDate registration;
-    private int intNuber;
+    private int intNumber;
     private String vin;
     private String spz;
     private double km;
+
+
+    public Truck(String name, String typ, Driver driver, LocalDate registration,
+                 int intNumber, String vin, String spz, double km) {
+        this.name = name;
+        this.typ = typ;
+        this.driver = driver;
+        this.registration = registration;
+        this.intNumber = intNumber;
+        this.vin = vin;
+        this.spz = spz;
+        this.km = km;
+    }
+
+    public Truck(LocalDate registration, int intNumber, String vin, String spz){
+        this(null,null,null,registration,intNumber,vin,spz,0);
+    }
 
     public String getName() {
         return name;
@@ -42,12 +59,12 @@ public class Truck {
         this.registration = registration;
     }
 
-    public int getIntNuber() {
-        return intNuber;
+    public int getIntNumber() {
+        return intNumber;
     }
 
-    public void setIntNuber(int intNuber) {
-        this.intNuber = intNuber;
+    public void setIntNumber(int intNumber) {
+        this.intNumber = intNumber;
     }
 
     public String getVin() {
@@ -77,5 +94,19 @@ public class Truck {
 
     public void setKm(double km) {
         this.km = km;
+    }
+
+    @Override
+    public String toString() {
+        return "Truck{" +
+                "jméno = '" + name + '\'' +
+                ", typ = '" + typ + '\'' +
+                ", řidič = " + driver +
+                ", registrace = " + registration +
+                ", int číslo = " + intNumber +
+                ", VIN = '" + vin + '\'' +
+                ", SPZ = '" + spz + '\'' +
+                ", km = " + km +
+                '}';
     }
 }

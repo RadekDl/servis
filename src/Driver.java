@@ -52,13 +52,15 @@ public class Driver {
         this.telefonNumber2 = telefonNumber2;
     }
 
+
+
     @Override
     public String toString() {
         return "Řidič {" +
-                "id ='" + id + '\'' +
-                ", jméno ='" + name + '\'' +
-                ", pracovní telefon='" + jobTelefonNumber + '\'' +
-                ", další telefon ='" + telefonNumber2 + '\'' +
+                "id = '" + id + '\'' +
+                ",jméno = '" + name + '\'' +
+                ",pracovní telefon ='" + jobTelefonNumber + '\'' +
+                ",další telefon = '" + telefonNumber2 + '\'' +
                 '}';
     }
 }

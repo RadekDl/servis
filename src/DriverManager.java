@@ -25,13 +25,19 @@ public class DriverManager {
         return null;
     }
 
+//    ❗ Problém: ConcurrentModificationException
+//
+//    V Javě není bezpečné měnit (remove) kolekci během for-each cyklu.
+//    Pokud drivers je instance ArrayList, může tento kód vyhodit výjimku:
+//    ✅ Oprava pomocí lambda (removeIf)//
+//    Bezpečně a jednoduše můžeš použít lambda výraz s metodou removeIf:
+
     public boolean removeDriverById(String id) {
-        for (Driver driver : drivers) {
-            if (driver.getId().equals(id)) {
-                drivers.remove(driver);
-                return true;
-            }
-        }
-        return false;
+        return drivers.removeIf(driver -> driver.getId().equals(id));
+//        Toto je lambda výraz – zkrácená anonymní funkce.//
+//        Překlad://
+//       „Pro každý driver v seznamu drivers zjisti, jestli driver.getId().equals(id) je pravda.“//
+//        Co znamená://
+//        Pokud ID řidiče je stejné jako hledané id, vrať true → tento řidič bude odstraněn.
     }
 }
